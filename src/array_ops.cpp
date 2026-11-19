@@ -16,7 +16,8 @@ void merge_half(int* arr, std::size_t middle, std::size_t size) {
         if (right >= size || (left < middle && arr[left] <= arr[right])) {
             merged[i] = arr[left];
             ++left;
-        } else {
+        }
+        else {
             merged[i] = arr[right];
             ++right;
         }
@@ -89,7 +90,7 @@ void array_merge_sort(int* arr, std::size_t size) {
     if (size < 2) {
         return;
     }
-    const std::size_t middle{size / 2};
+    std::size_t middle{size / 2};
     array_merge_sort(arr, middle);
     array_merge_sort(arr + middle, size - middle);
     merge_half(arr, middle, size);

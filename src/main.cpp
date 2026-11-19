@@ -103,9 +103,11 @@ int main() {
                 std::cout << "Не все элементы введены корректно\n";
                 break;
             }
-            if (std::size_t index{}; array_search(arr, size, target, index)) {
-                std::cout << "Найден индекс " << index << ", элемент " << arr[index] << '\n';
-            } else {
+            std::size_t index{};
+            if (array_search(arr, size, target, index)) {
+                std::cout << "Найден индекс " << index << ", элемент " << arr[index] << "\n";
+            }
+            else {
                 std::cout << "Не найдено\n";
             }
             break;
@@ -115,9 +117,7 @@ int main() {
                 std::cout << "Массив пуст\n";
                 break;
             }
-            array_merge_sort(arr, size);
-            array_print(arr, size);
-            std::cout << "Медиана: " << array_median(arr, size) << '\n';
+            std::cout << "Медиана: " << array_median(arr, size) << "\n";
             break;
         case 0:
             break;
